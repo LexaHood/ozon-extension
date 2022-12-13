@@ -16,5 +16,10 @@ export default defineManifest(async (env) => ({
       js: ["./src/content/index.tsx"],
       run_at: "document_start",
     },
+    {
+      matches: ["https://www.ozon.ru/product/*"],
+      js: ["./src/content/product_parse.ts"],
+      run_at: "document_start",
+    },
   ],
 }))

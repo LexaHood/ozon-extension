@@ -12,15 +12,6 @@ import { render } from 'preact'
     </button >
   }
 
-  const observer = new MutationObserver(() => {
-    const priceWidget = document.querySelector("[data-widget='webPrice']")
-    if (priceWidget) {
-      observer.disconnect()
-      console.log('priceWidget', priceWidget)
-    }
-  })
-  observer.observe(document.body, { childList: true, subtree: true })
-
   const root = document.createElement('div')
   root.id = 'ozhlpr-entry'
   document.body.appendChild(root)
