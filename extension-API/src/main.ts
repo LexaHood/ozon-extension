@@ -9,7 +9,10 @@ async function bootstrap() {
 
   const port = configService.get('API_PORT');
 
-  Logger.log(`API started at port: ${port}`, `main.ts`);
+  Logger.log(
+    `API:${configService.get('NODE_ENV')} started at port: ${port}`,
+    `main.ts`,
+  );
 
   await app.listen(port);
 }
