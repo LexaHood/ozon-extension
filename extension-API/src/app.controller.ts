@@ -1,4 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { IPriceList_db, IProduct_db } from '../../interfaces/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,8 +11,20 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('data')
-  getData() {
-    return this.appService.getData();
+  @Get('getAllProduct')
+  async getData(): Promise<IProduct_db[]> {
+    return await this.appService.getAllProduct();
+  }
+
+  @Get('getPriceList')
+  async getPriceList(
+    @Query('system_id') system_id: string,
+  ): Promise<IPriceList_db[]> {
+    return await this.appService.getPriceList(system_id);
+  }
+
+  @Post()
+  async addEntry(@Body() data) {
+    return await this.appService.addRecord(data);
   }
 }

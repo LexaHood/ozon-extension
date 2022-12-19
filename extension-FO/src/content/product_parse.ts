@@ -9,12 +9,12 @@ function parsePrice(priceHtmlElement: Element): IPrice | null {
   // const ozonCardPriceElement: Element | null = priceHtmlElement.querySelector("[data-widget='webOzonAccountPrice']")
 
   if (mainPriceElement.length >= 1 && mainPriceElement[0].textContent !== null) {
-    price.actualPrice = parseInt(mainPriceElement[0].textContent.replace(/\s+/g, ""));
+    price.actual_price = parseInt(mainPriceElement[0].textContent.replace(/\s+/g, ""));
   } else {
     return null;
   }
   if (mainPriceElement.length >= 2 && mainPriceElement[1].textContent !== null) {
-    price.oldPrice = parseInt(mainPriceElement[1].textContent.replace(/\s+/g, ""));
+    price.old_price = parseInt(mainPriceElement[1].textContent.replace(/\s+/g, ""));
   }
 
   // if (ozonCardPriceElement !== null && ozonCardPriceElement.textContent !== null) {
@@ -41,9 +41,10 @@ function parseId(htmlelement: Element): string {
       const price: IPrice | null = parsePrice(priceElement);
 
       if (price) {
-        product.id = parseId(priceElement);
+        product.system_id = parseId(priceElement);
         product.url = parseUrl(priceElement);
         product.price = price;
+        product.data_timestamp = Date.now();
       }
 
       console.log('priceWidget', product);
