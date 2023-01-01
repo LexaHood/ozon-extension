@@ -33,7 +33,7 @@ function parseId(htmlelement: Element): string {
 }
 
 (() => {
-  const observer: MutationObserver = new MutationObserver(() => {
+  const observer: MutationObserver = new MutationObserver(async () => {
     const priceElement: Element | null | undefined = document.querySelector("[data-widget='webPrice']")?.firstElementChild;
 
     if (priceElement) {
@@ -48,6 +48,7 @@ function parseId(htmlelement: Element): string {
       }
 
       console.log('priceWidget', product);
+      await chrome.runtime.sendMessage({ priceWidget: product });
     }
   })
   observer.observe(document.body, { childList: true, subtree: true });
