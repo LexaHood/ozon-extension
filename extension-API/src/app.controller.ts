@@ -1,10 +1,10 @@
 import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
-import { IPriceList_db, IProduct_db } from '../../interfaces/common';
+import { IPriceList_db, IProduct_db } from 'interfaces';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
   @Get()
   getHello(): string {

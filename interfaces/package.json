@@ -1,0 +1,6 @@
+{
+  "name": "interfaces",
+  "private": true,
+  "version": "1.0.0",
+  "main": "common.ts"
+}
