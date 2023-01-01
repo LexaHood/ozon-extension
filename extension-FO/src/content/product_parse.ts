@@ -1,4 +1,4 @@
-import { IPrice, IProduct } from "../../../interfaces/common";
+import { IPrice, IProduct } from "interfaces";
 
 const product = {} as IProduct;
 

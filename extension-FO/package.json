@@ -1,5 +1,5 @@
 {
-  "name": "ozon-extension",
+  "name": "extension",
   "private": true,
   "version": "1.0.0",
   "engines": {
@@ -11,7 +11,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "preact": "^10.5.15"
+    "preact": "^10.5.15",
+    "interfaces": "*"
   },
   "devDependencies": {
     "@crxjs/vite-plugin": "^1.0.14",
