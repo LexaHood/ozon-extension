@@ -22,4 +22,7 @@ export default defineManifest(async (env) => ({
       run_at: "document_start",
     },
   ],
+  background: {
+    service_worker: "./src/background/index.ts"
+  },
 }))
