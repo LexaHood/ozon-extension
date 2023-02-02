@@ -2,12 +2,7 @@
 import { Injectable } from '@nestjs/common';
 import { ResultSetHeader } from 'mysql2';
 import { DataSource } from 'typeorm';
-import {
-  IProduct_db,
-  IProduct,
-  IPrice,
-  IPriceList_db,
-} from '../../interfaces/common';
+import { IProduct_db, IProduct, IPrice, IPriceList_db } from 'interfaces';
 
 @Injectable()
 export class AppService {
