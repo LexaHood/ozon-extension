@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { IPrice, IProduct } from "../../../interfaces/common";
 
 const product = {} as IProduct;
@@ -48,6 +49,7 @@ function parseId(htmlelement: Element): string {
       }
 
       console.log('priceWidget', product);
+      axios.post('http://localhost:4001', product)
     }
   })
   observer.observe(document.body, { childList: true, subtree: true });
